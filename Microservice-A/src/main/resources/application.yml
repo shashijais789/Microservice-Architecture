@@ -1,0 +1,22 @@
+server:
+  port: 8091
+
+spring:
+  application:
+    name: Microservice-A
+  boot:
+    admin:
+      url: http://localhost:8090
+      username: admin
+      password: admin
+      
+management.security.enabled: false
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8010/eureka/
+  instance:
+    hostname: localhost
