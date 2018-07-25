@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: Microservice-B
+    name: microservice-b
   boot:
     admin:
       url: http://localhost:8090
