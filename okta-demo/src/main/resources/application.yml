@@ -1,0 +1,23 @@
+server:
+  port: 8015
+
+spring:
+  application:
+    name: BroadcomNativeApiGateway
+  
+eureka:
+  client:
+    enabled: false
+
+zuul:
+  prefix: /api
+  routes:
+    msa:
+      url: http://localhost:8091/
+    msb:
+      url: http://localhost:8092/
+  forceOriginalQueryStringEncoding: true
+  sensitiveHeaders: Cookie,Set-Cookie,Authorization
+  
+
+    

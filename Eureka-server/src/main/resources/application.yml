@@ -1,13 +1,26 @@
 server:
   port: 8010
+
+spring:
+  application:
+    name: eureka-server
   
 eureka:
   client:
     registerWithEureka: false
     fetchRegistry: false
+    service-url: 
+      defaultZone: http://localhost:8010/eureka
   server:
     wait-time-in-ms-when-sync-empty: 0
 
-spring:
-  application:
-    name: eureka-server
+zuul:
+  prefix: /api
+  routes:
+    microservice-a:
+      path: /microservice-a/**
+      url: http://localhost:8091/
+    microservice-b:
+      path: /microservice-b/**
+      url: http://localhost:8092/
+    
